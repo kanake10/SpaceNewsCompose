@@ -8,8 +8,8 @@ import javax.inject.Inject
 class SpaceNewsRepoImpl @Inject constructor(
     private val spaceNewsApi: SpaceNewsApi
 ) : SpaceNewsRepo {
-    override suspend fun getArticles(): List<ArticleDto> {
-        return spaceNewsApi.getArticles()
+    override suspend fun getArticles(limit:Int): List<ArticleDto> {
+        return spaceNewsApi.getArticles(limit)
     }
 
     override suspend fun getArticleDetails(id: Int): ArticleDetailDto {

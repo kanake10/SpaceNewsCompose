@@ -69,8 +69,7 @@ sealed class Screen(val route: String) {
 fun SpaceNewsItem(articleDomain: ArticleDomain, onItemClick: (ArticleDomain) -> Unit) {
         Card(
             modifier = Modifier.fillMaxWidth(),
-            shape = RoundedCornerShape(15.dp),
-
+            shape = RoundedCornerShape(15.dp)
         ) {
             Column(
                 modifier = Modifier

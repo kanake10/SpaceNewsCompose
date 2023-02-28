@@ -32,7 +32,7 @@ class SpaceNewsViewModel @Inject constructor(
         savedStateHandle.get<Int>(Constants.PARAM_ID)?.let { id ->
             getArticlesDetails(id)
         }
-        getArticles()
+        getArticles(limit = 50)
     }
 
     private fun getArticlesDetails(id: Int) {
@@ -48,8 +48,8 @@ class SpaceNewsViewModel @Inject constructor(
     }
 
 
-    private fun getArticles() {
-        getArticlesUseCase().onEach { result ->
+    private fun getArticles(limit:Int) {
+        getArticlesUseCase(limit).onEach { result ->
             when (result) {
                 is Resource.Success -> {
                     _state.value = SpaceNewsState(articles = result.data ?: emptyList())
@@ -67,9 +67,12 @@ class SpaceNewsViewModel @Inject constructor(
     }
 }
 
+
 data class SpaceNewsState(
     var isLoading:Boolean=false,
-    var articles:List<ArticleDomain>?=null,
+    val articles: List<ArticleDomain> = emptyList(),
     val articlesDetails: ArticleDetailDomain? = null,
     var error:String=""
 )
+
+
