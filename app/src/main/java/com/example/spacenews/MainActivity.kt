@@ -20,7 +20,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             SpaceNewsTheme {
                 // A surface container using the 'background' color from the theme
-                Surface(color = MaterialTheme.colorScheme.background) {
+                setContent{
                     val navController = rememberNavController()
                     NavHost(
                         navController = navController,
