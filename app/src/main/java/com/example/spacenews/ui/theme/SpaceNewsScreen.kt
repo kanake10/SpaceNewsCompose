@@ -26,7 +26,10 @@ import androidx.navigation.NavController
 import coil.compose.rememberImagePainter
 import com.example.spacenews.SpaceNewsViewModel
 import com.example.spacenews.domain.ArticleDomain
+import com.ramcosta.composedestinations.annotation.Destination
+import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 
+@Destination(start = true)
 @Composable
 fun SpaceNewsScreen(
     navController: NavController,
@@ -61,12 +64,14 @@ fun SpaceNewsScreen(
 }
 
 sealed class Screen(val route: String) {
-    object ArticleScreen: Screen("article-list")
+    object ArticleScreen: Screen("article_list")
     object ArticleDetailScreen: Screen("details")
 }
 
 @Composable
-fun SpaceNewsItem(articleDomain: ArticleDomain, onItemClick: (ArticleDomain) -> Unit) {
+fun SpaceNewsItem(articleDomain: ArticleDomain,
+                  onItemClick: (ArticleDomain) -> Unit
+                  ) {
         Card(
             modifier = Modifier.fillMaxWidth(),
             shape = RoundedCornerShape(15.dp)
@@ -74,6 +79,7 @@ fun SpaceNewsItem(articleDomain: ArticleDomain, onItemClick: (ArticleDomain) -> 
             Column(
                 modifier = Modifier
                     .padding(8.dp)
+                    .clickable { onItemClick(articleDomain) }
                     .fillMaxWidth(),
                 verticalArrangement = Arrangement.Center
             ) {
