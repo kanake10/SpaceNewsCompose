@@ -98,6 +98,18 @@ fun SpaceNewsItem(articleDomain: ArticleDomain, onItemClick: (ArticleDomain) -> 
                     color = Color.Black,
                     maxLines = 1
                 )
+                Spacer(modifier = Modifier.width(6.dp))
+
+                Text(
+                    text = articleDomain.summary,
+                    textAlign = TextAlign.Start,
+                    modifier = Modifier.padding(6.dp),
+                    fontSize = 15.sp,
+                    fontWeight = FontWeight.Normal,
+                    fontFamily = FontFamily.SansSerif,
+                    color = Color.Black,
+                    maxLines = 1
+                )
             }
         }
 }
