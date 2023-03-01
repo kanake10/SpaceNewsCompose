@@ -19,34 +19,15 @@ import com.example.spacenews.domain.GetArticlesUseCase
 
 @HiltViewModel
 class SpaceNewsViewModel @Inject constructor(
-    private val getArticlesUseCase: GetArticlesUseCase,
-    savedStateHandle: SavedStateHandle,
-    private  val getArticleDetailUseCase: GetArticleDetailUseCase
+    private val getArticlesUseCase: GetArticlesUseCase
 ) : ViewModel() {
 
-    private val coroutineDispatcher = Dispatchers.Main
     private val _state = mutableStateOf(SpaceNewsState())
     val state: State<SpaceNewsState> = _state
 
     init {
-        savedStateHandle.get<Int>(Constants.PARAM_ID)?.let { id ->
-            getArticlesDetails(id)
-        }
         getArticles(limit = 50)
     }
-
-    private fun getArticlesDetails(id: Int) {
-        getArticleDetailUseCase(id).onEach { data ->
-            when(data) {
-                is Resource.Success -> {
-                    _state.value = SpaceNewsState(articlesDetails = data.data)
-                }
-
-                else -> {}
-            }
-        }.launchIn(viewModelScope)
-    }
-
 
     private fun getArticles(limit:Int) {
         getArticlesUseCase(limit).onEach { result ->
