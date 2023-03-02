@@ -93,7 +93,7 @@ fun SpaceNewsItem(articleDomain: ArticleDomain,
                     textAlign = TextAlign.Start,
                     modifier = Modifier.padding(6.dp),
                     fontSize = 15.sp,
-                    fontWeight = FontWeight.Normal,
+                    fontWeight = FontWeight.Bold,
                     fontFamily = FontFamily.SansSerif,
                     color = Color.Black,
                     maxLines = 1
