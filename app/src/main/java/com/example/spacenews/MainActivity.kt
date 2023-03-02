@@ -4,13 +4,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.navigation.compose.NavHost
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.spacenews.ui.theme.DetailScreen
-import com.example.spacenews.ui.theme.Screen
-import com.example.spacenews.ui.theme.SpaceNewsScreen
 import com.example.spacenews.ui.theme.SpaceNewsTheme
 import dagger.hilt.android.AndroidEntryPoint
 

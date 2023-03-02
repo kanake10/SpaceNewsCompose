@@ -1,4 +1,4 @@
-package com.example.spacenews.ui.theme
+package com.example.spacenews
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.launchIn
 import androidx.lifecycle.viewModelScope
-import com.example.spacenews.SpaceNewsState
 import com.example.spacenews.core.Constants
 import com.example.spacenews.core.Resource
 import com.example.spacenews.domain.GetArticleDetailUseCase
