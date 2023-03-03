@@ -15,20 +15,12 @@ import javax.inject.Inject
 
 @HiltViewModel
 class DetailViewModel @Inject constructor(
-    private  val getArticleDetailUseCase: GetArticleDetailUseCase,
-    savedStateHandle: SavedStateHandle
+    private  val getArticleDetailUseCase: GetArticleDetailUseCase
 ) :ViewModel() {
 
     private val _state = mutableStateOf(SpaceNewsState())
     val state: State<SpaceNewsState> = _state
-
-    init {
-        savedStateHandle.get<Int>(Constants.PARAM_ID)?.let { id ->
-            getArticlesDetails(id)
-        }
-    }
-
-    private fun getArticlesDetails(id: Int) {
+     fun getArticlesDetails(id: Int) {
         getArticleDetailUseCase(id).onEach { data ->
             when(data) {
                 is Resource.Success -> {
