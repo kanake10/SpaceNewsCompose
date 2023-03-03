@@ -1,4 +1,4 @@
-package com.example.spacenews
+package com.example.spacenews.presentation
 
 import androidx.compose.runtime.State
 import androidx.lifecycle.ViewModel
@@ -6,15 +6,11 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.launchIn
 import com.example.spacenews.core.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
-import androidx.lifecycle.SavedStateHandle
-import kotlinx.coroutines.Dispatchers
 import javax.inject.Inject
 import androidx.compose.runtime.mutableStateOf
-import com.example.spacenews.core.Constants
 import com.example.spacenews.domain.ArticleDetailDomain
 import com.example.spacenews.domain.ArticleDomain
 import kotlinx.coroutines.flow.onEach
-import com.example.spacenews.domain.GetArticleDetailUseCase
 import com.example.spacenews.domain.GetArticlesUseCase
 
 @HiltViewModel

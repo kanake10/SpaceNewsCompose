@@ -1,4 +1,4 @@
-package com.example.spacenews
+package com.example.spacenews.presentation
 
 import androidx.compose.foundation.clickable
 import androidx.compose.runtime.Composable
@@ -24,6 +24,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import coil.compose.rememberImagePainter
 import com.example.spacenews.domain.ArticleDomain
+
 @Composable
 fun SpaceNewsScreen(
     navController: NavController,

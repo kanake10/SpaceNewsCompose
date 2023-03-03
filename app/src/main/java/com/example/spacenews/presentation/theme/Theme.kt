@@ -1,4 +1,4 @@
-package com.example.spacenews.ui.theme
+package com.example.spacenews.presentation.theme
 
 import android.app.Activity
 import android.os.Build

@@ -1,4 +1,4 @@
-package com.example.spacenews
+package com.example.spacenews.presentation
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement

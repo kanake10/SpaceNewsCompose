@@ -1,4 +1,4 @@
-package com.example.spacenews
+package com.example.spacenews.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -8,7 +8,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.example.spacenews.ui.theme.SpaceNewsTheme
+import com.example.spacenews.presentation.theme.SpaceNewsTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
