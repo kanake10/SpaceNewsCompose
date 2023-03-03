@@ -26,11 +26,19 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.rememberImagePainter
+import androidx.compose.runtime.LaunchedEffect
+import androidx.navigation.NavController
 
 @Composable
 fun DetailScreen(
+    navController: NavController,
+    id: Int,
     viewModel: DetailViewModel = hiltViewModel()
 ) {
+    LaunchedEffect(true) {
+        viewModel.getArticlesDetails(id)
+    }
+
     val state = viewModel.state.value
 
     Box (modifier = Modifier.fillMaxSize()) {

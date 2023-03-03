@@ -3,9 +3,11 @@ package com.example.spacenews
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.example.spacenews.ui.theme.SpaceNewsTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -28,9 +30,16 @@ class MainActivity : ComponentActivity() {
                             SpaceNewsScreen(navController)
                         }
                         composable(
-                            route = Screen.ArticleDetailScreen.route+"/{id}"
+                            route = Screen.ArticleDetailScreen.route + "/{id}",
+                            arguments = listOf(
+                                navArgument("id") {
+                                    type = NavType.IntType
+                                    defaultValue = 1
+                                }
+                            )
                         ) {
-                            DetailScreen()
+                            val id = it.arguments?.getInt("id")
+                            DetailScreen(navController, id!!)
                         }
                     }
                 }
